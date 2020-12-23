@@ -57,15 +57,18 @@ res.forEach((el) => {
 
 // Выводим номера в боди
 for (let elem of correctNumbers) {
-  elem = elem.split("");
+  // elem = elem.split("");
 
-  for (let i = 0; i <= elem.length - 1; i++) {
-    if (i % 4 == 0 && i != 0) {
-      elem[i - 1] += "-";
-    }
-  }
+  // for (let i = 0; i <= elem.length - 1; i++) {
+  //   if (i % 4 == 0 && i != 0) {
+  //     elem[i - 1] += "-";
+  //   }
+  // }
 
-  elem = elem.join("");
+  // elem = elem.join("");
 
-  document.body.innerHTML += `<h3>${elem}</h3>`;
+  let parts = elem.match(/\d{4}/g);
+  parts = parts.join(" ");
+
+  document.body.innerHTML += `<h3>${parts}</h3>`;
 }
